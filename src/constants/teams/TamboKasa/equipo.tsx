@@ -6,7 +6,7 @@ export const tamboKasa: ITeam[] = [
     id: 9,
     grupo: "A",
     name: "Tambo Kasa",
-    logo: getLogo("Tambo Kasa"),
+    logo: "",
     color: "rgb(107, 242, 150)",
     teams: [
       {

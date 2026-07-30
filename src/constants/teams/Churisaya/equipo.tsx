@@ -6,7 +6,7 @@ export const churisaya: ITeam[] = [
     id: 15,
     grupo: "A",
     name: "Churisaya",
-    logo: getLogo("Churisaya"),
+    logo: "",
     color: "rgb(241, 59, 59)",
     teams: [
       {

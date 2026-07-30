@@ -6,7 +6,7 @@ export const condoriri: ITeam[] = [
     id: 7,
     grupo: "A",
     name: "Condoriri",
-    logo: getLogo("Condoriri"),
+    logo: "",
     color: "rgb(230, 225, 225)",
     teams: [
       {

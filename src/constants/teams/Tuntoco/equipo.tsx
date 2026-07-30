@@ -6,7 +6,7 @@ export const tuntoco: ITeam[] = [
     id: 30,
     grupo: "A",
     name: "Tuntoco",
-    logo: getLogo("Tuntoco"),
+    logo: "",
     color: "rgb(101, 247, 218)",
     teams: [
       {

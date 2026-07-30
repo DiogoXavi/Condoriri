@@ -6,7 +6,7 @@ export const chillagua: ITeam[] = [
     id: 27,
     grupo: "A",
     name: "Chillagua",
-    logo: getLogo("Chillagua"),
+    logo: "",
     color: "rgb(147, 108, 247)",
     teams: [
       {

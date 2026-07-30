@@ -7,7 +7,7 @@ export const sivingaMayu: ITeam[] = [
     id: 16,
     grupo: "A",
     name: "Sivinga Mayu",
-    logo: getLogo("Sivinga Mayu"),
+    logo: "",
     description: "Equipo de fútbol senior del grupo A",
     color: "rgb(83, 160, 243)",
     teams: [

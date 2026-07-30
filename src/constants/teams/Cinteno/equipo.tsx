@@ -6,7 +6,7 @@ export const cinteno: ITeam[] = [
     id: 25,
     grupo: "A",
     name: "Cinteño",
-    logo: getLogo("Cinteño"),
+    logo: "",
     color: "rgb(225, 243, 27)",
     teams: [
       {
