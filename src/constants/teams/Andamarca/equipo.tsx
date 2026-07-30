@@ -1,4 +1,3 @@
-import { getLogo } from "../../../tools/tools";
 import type { ITeam } from "../../../types/types";
 //import { getProfile } from "./images/tools";
 export const andamarca: ITeam[] = [
