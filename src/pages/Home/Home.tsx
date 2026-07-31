@@ -52,9 +52,6 @@ const Home: React.FC = () => {
   //   const storedId = localStorage.getItem(LAST_SEEN_KEY);
   //   return storedId ? Number(storedId) : null;
   // });
-  const hasNewNotifications = (() => {
-    console.log("abriendo Notificaciones.");
-  });
   
   const handleOpenNotifications = (() => {
     console.log("abriendo Notificaciones.");
@@ -148,7 +145,7 @@ const Home: React.FC = () => {
           <Cards to="/notifications" onClick={handleOpenNotifications}>
             <NotificationIconWrapper>
               <NotificationsIcon fontSize="large" />
-              {hasNewNotifications && <NotificationDot />}
+              <NotificationDot />
             </NotificationIconWrapper>
             <span>Notificaciones</span>
           </Cards>
