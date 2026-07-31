@@ -1,18 +1,25 @@
 import React from "react";
 import logo from "../../assets/images/icons/logo1.png";
-import { Tooltip, Button, useMediaQuery } from "@mui/material";
+import { Tooltip, Button } from "@mui/material";
 
 import ShareIcon from "@mui/icons-material/Share";
 import HomeIcon from "@mui/icons-material/Home";
-import { Container, Logo, ButtonContainer, LogoContainer, HomeButton, NavButtonStyle } from "./styles";
+import {
+  Container,
+  Logo,
+  ButtonContainer,
+  LogoContainer,
+  HomeButton,
+  NavButtonStyle,
+} from "./styles";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
-  const isMobile = useMediaQuery("(max-width:600px)");
+  //const isMobile = useMediaQuery("(max-width:600px)");
 
-   const handleNavigate = (description: string) => {
+  const handleNavigate = (description: string) => {
     switch (description) {
       case "fixture":
         navigate(`/fixture?query=${description}`);
@@ -32,28 +39,27 @@ const Header: React.FC = () => {
     }
   };
 
-const onShare = () => {
-  if (!navigator.share) {
-    alert("La función de compartir no está disponible en este navegador.");
-    return;
-  }
+  const onShare = () => {
+    if (!navigator.share) {
+      alert("La función de compartir no está disponible en este navegador.");
+      return;
+    }
 
-  const shareData = {
-    title: "Campeonato San Lucas 2026",
-    text: "¡Mira el Campeonato San Lucas 2026! Toda la información sobre equipos, jugadores y estadísticas.",
-    url: window.location.href,
+    const shareData = {
+      title: "Campeonato San Lucas 2026",
+      text: "¡Mira el Campeonato San Lucas 2026! Toda la información sobre equipos, jugadores y estadísticas.",
+      url: window.location.href,
+    };
+
+    navigator
+      .share(shareData)
+      .catch((error) => console.error("Error sharing:", error));
   };
-
-  navigator
-    .share(shareData)
-    .catch((error) => console.error("Error sharing:", error));
-};
-
 
   const isHomePage = location.pathname === "/";
 
   return (
-     <Container>
+    <Container>
       <LogoContainer onClick={() => navigate("/")}>
         <Logo src={logo} alt="Logo" />
         <Tooltip title="Compartir">
@@ -71,9 +77,9 @@ const onShare = () => {
           color="secondary"
           sx={NavButtonStyle()}
         >
-          HOME
+          FIXTURE
         </Button>
-        <Button
+        {/* <Button
           onClick={() => handleNavigate("table")}
           color="secondary"
           sx={NavButtonStyle()}
@@ -86,7 +92,7 @@ const onShare = () => {
           sx={NavButtonStyle()}
         >
           {isMobile ? "GOLEADORES" : "TABLA DE GOLEADORES"}
-        </Button>
+        </Button> */}
         <Button
           onClick={() => handleNavigate("teams")}
           color="secondary"

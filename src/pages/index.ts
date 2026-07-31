@@ -1,1 +1,8 @@
 export { default as Home } from "./Home";
+export { default as About } from "./About";
+export { default as CallUp } from "./CallUp";
+export { default as Dashboard } from "./Dashboard";
+export { default as Fixture } from "./Fixture";
+export { default as PlayOffs } from "./PlayOffs";
+export { default as Table } from "./Table";
+export { default as Teams } from "./Teams";
