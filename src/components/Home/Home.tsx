@@ -1,4 +1,4 @@
-import logo from "../../assets/images/logos/logo2.png";
+import logo from "../../assets/images/logos/logo1.png";
 import callUp from "../../assets/documents/convocatoria.pdf";
 import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
@@ -21,7 +21,7 @@ const message =
   "Hola me podria pasar mas informacion sobre el campeonato de futbol de distrito 7 San Lucas 2026, gracias.";
 
 const contacts = [
-  { name: "Iver Carmono", phone: "5491160341175" },
+  { name: "Iver Carmona", phone: "5491160341175" },
 ];
 
 function Home() {
