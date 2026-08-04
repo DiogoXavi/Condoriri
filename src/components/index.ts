@@ -12,3 +12,4 @@ export { default as MatchCard } from './MatchCard';
 export { default as TeamMatchCard } from './TeamMatchCard';
 export { default as StandingsTable } from './StandingsTable';
 export { default as Sponsors } from './Sponsors';
+export { default as DelegateCard } from './DelegateCard';

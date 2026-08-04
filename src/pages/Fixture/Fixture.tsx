@@ -141,7 +141,7 @@ const Fixture: React.FC = () => {
       <HeaderCategory
         img={logo}
         title={`Fixture ${selectedCategory}`}
-        color="#22b7be"
+        color="#6cb9ff"
         category={categories}
         onCategoryChange={handleCategoryChange}
         selectedCategory={selectedCategory}

@@ -46,8 +46,8 @@ const Header: React.FC = () => {
     }
 
     const shareData = {
-      title: "Campeonato San Lucas 2026",
-      text: "¡Mira el Campeonato San Lucas 2026! Toda la información sobre equipos, jugadores y estadísticas.",
+      title: "Campeonato Distrito 7 San Lucas 2026",
+      text: "¡Mira el Campeonato Distrito 7 San Lucas 2026! Toda la información sobre equipos, jugadores y estadísticas.",
       url: window.location.href,
     };
 

@@ -10,6 +10,7 @@ import {
   CallUp,
   Dashboard,
   PlayOffs,
+  TeamCategories,
 } from "../pages";
 
 const AppRouter: React.FC = () => {
@@ -22,6 +23,7 @@ const AppRouter: React.FC = () => {
         <Route path="/call-up" element={<CallUp />} />
         <Route path="/playoffs" element={<PlayOffs />} />
       </Route>
+      <Route path="/team-categories" element={<TeamCategories />} />
       <Route path="/fixture" element={<Fixture />} />
       <Route path="/table" element={<Table />} />
       <Route path="/dashboard" element={<Dashboard />} />

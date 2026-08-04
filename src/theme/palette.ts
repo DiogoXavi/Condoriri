@@ -11,7 +11,7 @@ const palette: PaletteOptions = {
     white,
   },
   primary: {
-    main: '#22b7be',
+    main: '#6cb9ff',
     contrastText: black,
   },
   secondary: {

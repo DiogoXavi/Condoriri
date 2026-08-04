@@ -6,3 +6,4 @@ export { default as Fixture } from "./Fixture";
 export { default as PlayOffs } from "./PlayOffs";
 export { default as Table } from "./Table";
 export { default as Teams } from "./Teams";
+export { default as TeamCategories } from "./TeamCategories";

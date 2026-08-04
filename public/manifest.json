@@ -1,0 +1,22 @@
+{
+  "name": "Campeonato Condoriri San Lucas 2026",
+  "short_name": "CONDORIRI'26",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#22b7be",
+  "theme_color": "#22b7be",
+  "icons": [
+    {
+      "src": "/logoChampionship.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logoChampionship.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

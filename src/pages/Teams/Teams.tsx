@@ -11,7 +11,6 @@ const Teams: React.FC = () => {
       <Root>
         <Title title="Equipos"/>
         {teams.map((item) => (
-   
           <TeamCard
             key={item.id}
             id={item.id}

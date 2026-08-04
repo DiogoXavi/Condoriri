@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 import { Root, RadioGroupContainer, SelectContainer } from "./styles";
-import SearchSerie from "../SearchSerie/SearchSerie";
+//import SearchSerie from "../SearchSerie/SearchSerie";
 import FilterIcon from "@mui/icons-material/Filter";
 
 import { juvenil } from "../../constants/teamCategories/juvenil";
@@ -36,7 +36,7 @@ const SearchBox: React.FC<ISearchBoxProps> = ({
   team,
   setTeam,
   serie,
-  setSerie,
+  //setSerie,
 }) => {
   const teamsSelected = (serie: SerieType, teams: ITeamCategoryItem[]) => {
     if (serie === "all") return teams;
@@ -74,9 +74,9 @@ const SearchBox: React.FC<ISearchBoxProps> = ({
 
   return (
     <Root>
-      {selectedCategory === "Juvenil" && (
+      {/* {selectedCategory === "Juvenil" && (
         <SearchSerie serie={serie} setSerie={setSerie} />
-      )}
+      )} */}
 
       <FormControl>
         <RadioGroupContainer>

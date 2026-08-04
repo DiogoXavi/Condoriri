@@ -18,11 +18,10 @@ import {
 } from "./styles";
 
 const message =
-  "Hola me podria pasar mas informacion sobre el campeonato municipal de San Lucas por favor?";
+  "Hola me podria pasar mas informacion sobre el campeonato de futbol de distrito 7 San Lucas 2026, gracias.";
 
 const contacts = [
-  { name: "Correa Delio", phone: "5491141957971" },
-  { name: "Rodríguez Hernán", phone: "5491150171880" },
+  { name: "Iver Carmono", phone: "5491160341175" },
 ];
 
 function Home() {
@@ -31,11 +30,11 @@ function Home() {
       <Logo src={logo} alt="Logo campeonato" />
 
       <Title>Campeonato de Fútbol Intercomunal</Title>
-      <Subtitle>Municipio San Lucas - 2026</Subtitle>
+      <Subtitle>Distrito 7 San Lucas - 2026</Subtitle>
 
       <Description>
         Aquí encontrarás toda la información sobre los equipos, jugadores y
-        estadísticas del campeonato.
+        estadísticas del campeonato Distrito 7 de municipio San Lucas Chuquisaca Bolivia.
       </Description>
 
       <SectionTitle>Contactos e inscripciones</SectionTitle>
@@ -89,12 +88,12 @@ function Home() {
       <SectionTitle>Organiza</SectionTitle>
 
       <Description>
-        Monte Pampa - Rodeo Cocha - Tambo Kasa - Sabala - Huayllani Grande
+        Condoriri
       </Description>
 
       <Footer>
         Xavi Innovation Technology © 2026. All rights reserved. Contact us at:
-        1130918821
+        591 74439889
       </Footer>
     </Container>
   );

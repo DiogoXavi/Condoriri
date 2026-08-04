@@ -4,14 +4,14 @@ import portada2 from "../../assets/images/portada/por2.png";
 import portada3 from "../../assets/images/portada/por3.png";
 
 import ga from "../../assets/images/sponsors/ga.jpeg";
-import beto1 from "../../assets/images/sponsors/beto1.png";
+// import beto1 from "../../assets/images/sponsors/beto1.png";
 import nr from "../../assets/images/sponsors/nr.png";
 
-// import ArticleIcon from "@mui/icons-material/Article";
+import ArticleIcon from "@mui/icons-material/Article";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AddToHomeScreenIcon from "@mui/icons-material/AddToHomeScreen";
-import SchemaIcon from "@mui/icons-material/Schema";
+//import SchemaIcon from "@mui/icons-material/Schema";
 
 import { Header, Hero, Footer } from "../../components";
 //import { useNotifications } from "../../hooks/useNotifications";
@@ -36,8 +36,8 @@ import { Sponsors } from "../../components";
 
 const portada = [portada1, portada2, portada3];
 const sponsorsData = [
-  { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerado soy de la app, me puedes pasar mas informacion por favor?" },
-  { banner: beto1, phoneNumber: 1151762134, url: "", message: "Hola Beto soy de la app, estoy buscando..." },
+  { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerardo soy de la app, me puedes pasar mas informacion por favor?" },
+  // { banner: beto1, phoneNumber: 1151762134, url: "", message: "Hola Beto soy de la app, estoy buscando..." },
   { banner: nr, phoneNumber: 1133697922, url: "", message: "Hola Nestor tengo una consulta sobre mi automovil." },
   // { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerado soy de la app, me puedes pasar mas informacion por favor?" }, 
   // { banner: beto1, phoneNumber: 1151762134, url: "", message: "Hola Beto soy de la app, estoy buscando..." },
@@ -128,11 +128,11 @@ const Home: React.FC = () => {
 
       <div style={{ textAlign: "center" }}>
         <TitleContainer>
-          <TitleText>San Lucas 2026</TitleText>
+          <TitleText>Condoriri 2026</TitleText>
           <UpdateInfo>
             <LiveDot />
             <span>
-              Última actualización: <strong>17 Junio 2026 • 13:27 </strong> hs
+              Última actualización: <strong>03 agosto 2026 • 21:48 </strong> hs
             </span>
           </UpdateInfo>
           {/* <p>
@@ -149,15 +149,15 @@ const Home: React.FC = () => {
             </NotificationIconWrapper>
             <span>Notificaciones</span>
           </Cards>
-          {/* 
+          
           <Cards to="/call-up">
             <ArticleIcon fontSize="large" />
             <span>Convocatoria</span>
-          </Cards> */}
-          <Cards to="/playoffs">
+          </Cards>
+          {/* <Cards to="/playoffs">
             <SchemaIcon fontSize="large" />
             <span>Playoffs</span>
-          </Cards>
+          </Cards> */}
 
           <Cards to="/about">
             <QuestionAnswerIcon fontSize="large" />
@@ -195,7 +195,7 @@ const Home: React.FC = () => {
           <h3
             style={{
               marginBottom: 0,
-              color: '#22b7be',
+              color: '#6cb9ff',
               fontWeight: 700,
               fontSize: 20,
             }}
