@@ -103,6 +103,7 @@ const Home: React.FC = () => {
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
+    console.log("Instalando la app...");
 
     deferredPrompt.prompt();
 
@@ -110,6 +111,8 @@ const Home: React.FC = () => {
 
     if (choiceResult.outcome === "accepted") {
       console.log("Usuario instaló la app");
+    }else{
+      console.log("Usuario rechazó la instalación de la app");
     }
 
     setDeferredPrompt(null);
