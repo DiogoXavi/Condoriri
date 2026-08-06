@@ -91,7 +91,7 @@ const table = React.useMemo<ITeamStanding[]>(() => {
     <Root>
       <HeaderCategory
         img={logo}
-        color="#22b7be"
+        color="#6cb9ff"
         category={categories}
         onCategoryChange={handleCategoryChange}
         selectedCategory={selectedCategory}
