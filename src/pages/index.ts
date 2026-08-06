@@ -7,3 +7,5 @@ export { default as PlayOffs } from "./PlayOffs";
 export { default as Table } from "./Table";
 export { default as Teams } from "./Teams";
 export { default as TeamCategories } from "./TeamCategories";
+export { default as Equipos } from "./Equipos";
+export { default as Notifications } from "./Notifications";

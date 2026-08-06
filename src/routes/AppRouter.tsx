@@ -11,6 +11,8 @@ import {
   Dashboard,
   PlayOffs,
   TeamCategories,
+  Equipos,
+  Notifications,
 } from "../pages";
 
 const AppRouter: React.FC = () => {
@@ -20,6 +22,7 @@ const AppRouter: React.FC = () => {
       <Route path="/" element={<Search />}>
         <Route path="/about" element={<About />} />
         <Route path="/teams" element={<Teams />} />
+        <Route path="/notifications" element={<Notifications />} />
         <Route path="/call-up" element={<CallUp />} />
         <Route path="/playoffs" element={<PlayOffs />} />
       </Route>
@@ -27,6 +30,7 @@ const AppRouter: React.FC = () => {
       <Route path="/fixture" element={<Fixture />} />
       <Route path="/table" element={<Table />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/equipos" element={<Equipos />} />
     </Routes>
   );
 };
