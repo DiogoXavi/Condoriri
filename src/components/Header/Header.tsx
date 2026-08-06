@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/icons/logo1.png";
-import { Tooltip, Button } from "@mui/material";
-
+import { Tooltip, Button, useMediaQuery } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import HomeIcon from "@mui/icons-material/Home";
 import {
@@ -17,7 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  //const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const handleNavigate = (description: string) => {
     switch (description) {
@@ -79,14 +78,14 @@ const Header: React.FC = () => {
         >
           FIXTURE
         </Button>
-        {/* <Button
+        <Button
           onClick={() => handleNavigate("table")}
           color="secondary"
           sx={NavButtonStyle()}
         >
           {isMobile ? "TABLA" : "TABLA DE POSICIONES"}
         </Button>
-        <Button
+        {/* <Button
           onClick={() => handleNavigate("scorers")}
           color="secondary"
           sx={NavButtonStyle()}

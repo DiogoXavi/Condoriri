@@ -3,7 +3,6 @@ import {
   StandingsTable,
   Title,
   HeaderCategory,
-  SearchSerie,
 } from "../../components";
 import logo from "../../assets/images/icons/logo1.png";
 
@@ -30,7 +29,7 @@ const Table: React.FC = () => {
   const queryParams = new URLSearchParams(location.search);
   const categoryParam = queryParams.get("category");
 
-  const [serie, setSerie] = useState<SerieType>("all");
+  const [serie ] = useState<SerieType>("all");
   const [selectedCategory, setSelectedCategory] = useState<CategoryType>(
     (categoryParam as CategoryType) || "Juvenil",
   );
@@ -98,9 +97,9 @@ const table = React.useMemo<ITeamStanding[]>(() => {
         selectedCategory={selectedCategory}
       />
       <Title title={`Tabla de posiciones: ${selectedCategory}`} />
-      {selectedCategory === "Juvenil" && (
+      {/* {selectedCategory === "Juvenil" && (
         <SearchSerie serie={serie} setSerie={setSerie} />
-      )}
+      )} */}
       <StandingsTable category={selectedCategory} standings={filteredTable} />
     </Root>
   );
