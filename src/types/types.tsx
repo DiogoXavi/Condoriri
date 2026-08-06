@@ -17,7 +17,7 @@ export interface INotification {
   title: string;
   description: string;
   status: 'success' | 'info' | 'warning' | 'error';
-  date: string;
+  date?: string;
 }
 
 export interface IPlayer {

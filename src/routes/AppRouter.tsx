@@ -13,6 +13,7 @@ import {
   TeamCategories,
   Equipos,
   Notifications,
+  NotificationsAdmin,
 } from "../pages";
 
 const AppRouter: React.FC = () => {
@@ -31,6 +32,7 @@ const AppRouter: React.FC = () => {
       <Route path="/table" element={<Table />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/equipos" element={<Equipos />} />
+      <Route path="/notifications-admin" element={<NotificationsAdmin />} />
     </Routes>
   );
 };

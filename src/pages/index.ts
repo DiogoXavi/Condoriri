@@ -9,3 +9,4 @@ export { default as Teams } from "./Teams";
 export { default as TeamCategories } from "./TeamCategories";
 export { default as Equipos } from "./Equipos";
 export { default as Notifications } from "./Notifications";
+export { default as NotificationsAdmin } from "./NotificationsAdmin";
