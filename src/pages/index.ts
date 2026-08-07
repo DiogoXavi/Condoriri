@@ -10,3 +10,6 @@ export { default as TeamCategories } from "./TeamCategories";
 export { default as Equipos } from "./Equipos";
 export { default as Notifications } from "./Notifications";
 export { default as NotificationsAdmin } from "./NotificationsAdmin";
+export { default as PlayersAdmin } from "./PlayersAdmin";
+export { default as TeamDetail } from "./TeamDetail";
+export { default as PlayerDetail } from "./PlayerDetail";

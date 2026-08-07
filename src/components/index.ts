@@ -14,3 +14,5 @@ export { default as StandingsTable } from './StandingsTable';
 export { default as Sponsors } from './Sponsors';
 export { default as DelegateCard } from './DelegateCard';
 export { default as Notifications } from './Notifications';
+export { default as PlayerCard } from './PlayerCard';
+export { default as HeaderTeam } from './HeaderTeam';
