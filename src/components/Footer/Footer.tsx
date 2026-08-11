@@ -31,8 +31,8 @@ const year = new Date().getFullYear();
         ))}
       </ImageContent> */}
       <RightsContainer>
-        <p>Xavi Innovation Technology © {year}. All rights reserved.</p>
-        <p>Contact us at: 1130918821</p>
+        <p>Xavier Innovation Technology © {year}. All rights reserved.</p>
+        <p>Contact us at: 74439889</p>
       </RightsContainer>
     </Root>
   );

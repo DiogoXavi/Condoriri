@@ -85,13 +85,13 @@ const Header: React.FC = () => {
         >
           {isMobile ? "TABLA" : "TABLA DE POSICIONES"}
         </Button>
-        {/* <Button
+        <Button
           onClick={() => handleNavigate("scorers")}
           color="secondary"
           sx={NavButtonStyle()}
         >
           {isMobile ? "GOLEADORES" : "TABLA DE GOLEADORES"}
-        </Button> */}
+        </Button>
         <Button
           onClick={() => handleNavigate("teams")}
           color="secondary"

@@ -17,6 +17,7 @@ import {
   PlayersAdmin,
   TeamDetail,
   PlayerDetail,
+  TopScorerTable,
 } from "../pages";
 
 const AppRouter: React.FC = () => {
@@ -39,6 +40,7 @@ const AppRouter: React.FC = () => {
       <Route path="/notifications-admin" element={<NotificationsAdmin />} />
       <Route path="/players-admin" element={<PlayersAdmin />} />
       <Route path="/player-detail" element={<PlayerDetail />} />
+      <Route path="/top-scorers-table" element={<TopScorerTable />} />
     </Routes>
   );
 };

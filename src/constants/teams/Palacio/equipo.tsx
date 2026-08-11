@@ -1,12 +1,12 @@
 import type { ITeam } from "../../../types/types";
 //import { getProfile } from "./images/tools";
-export const tamboKasa: ITeam[] = [
+export const palacio: ITeam[] = [
   {
-    id: 9,
+    id: 2,
     grupo: "A",
-    name: "Tambo Kasa",
+    name: "Palacio",
     logo: "",
-    color: "rgb(107, 242, 150)",
+    color: "rgb(191, 190, 190)",
     teams: [
       {
         id: 1,
@@ -20,7 +20,6 @@ export const tamboKasa: ITeam[] = [
         players: [
         ],
       },
-     
     ],
   },
 ];
