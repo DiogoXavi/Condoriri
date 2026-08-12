@@ -14,8 +14,7 @@ export const Container = styled.div({
 });
 
 export const Logo = styled.img({
-  width: "140px",
-  marginBottom: "20px",
+  width: "300px"
 });
 
 export const Title = styled.h2({
@@ -25,8 +24,8 @@ export const Title = styled.h2({
 
 export const Subtitle = styled.h3({
   fontSize: "22px",
-  marginBottom: "20px",
-  color: "#1abc9c",
+  marginBottom: "10px",
+  color: "#6cb9ff",
 });
 
 export const Description = styled.p({
@@ -37,7 +36,7 @@ export const Description = styled.p({
 });
 
 export const SectionTitle = styled.h2({
-  marginTop: "30px",
+  marginTop: "5px",
   marginBottom: "15px",
   fontSize: "22px",
 });

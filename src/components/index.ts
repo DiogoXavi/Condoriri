@@ -17,3 +17,4 @@ export { default as Notifications } from './Notifications';
 export { default as PlayerCard } from './PlayerCard';
 export { default as HeaderTeam } from './HeaderTeam';
 export { default as ScorerCard } from './ScorerCard';
+export { default as ManagerCard } from './ManagerCard';

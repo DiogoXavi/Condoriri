@@ -1,9 +1,11 @@
 import logo from "../../assets/images/logos/logo1.png";
+import perfil from "../../assets/images/logos/perfil.jpeg";
 import callUp from "../../assets/documents/convocatoria.pdf";
 import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import { FaWhatsapp, FaChromecast } from "react-icons/fa";
+import { FaChromecast } from "react-icons/fa";
+import { ManagerCard } from "../../components";
 
 import {
   Container,
@@ -12,16 +14,14 @@ import {
   Subtitle,
   Description,
   SectionTitle,
-  Contact,
   Footer,
-  ContactName,
 } from "./styles";
 
-const message =
-  "Hola me podria pasar mas informacion sobre el campeonato de futbol de distrito 7 San Lucas 2026, gracias.";
+// const message =
+//   "Hola me podria pasar mas informacion sobre el campeonato de futbol de distrito 7 San Lucas 2026, gracias.";
 
 const contacts = [
-  { name: "Iver Carmona", phone: "5491160341175" },
+  { id: 1,name: "Iver Carmona", cargo: "Organizador", phone: "5491160341175", ing: perfil },
 ];
 
 function Home() {
@@ -40,20 +40,7 @@ function Home() {
       <SectionTitle>Contactos e inscripciones</SectionTitle>
 
       {contacts.map((contact) => (
-        <Contact
-          key={contact.phone}
-          href={`https://wa.me/${contact.phone}?text=${encodeURIComponent(
-            message,
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <ContactName>
-            {contact.name}: {""}
-          </ContactName>
-          <FaWhatsapp />
-          {contact.phone}
-        </Contact>
+        <ManagerCard id={contact.id} name={contact.name} cargo={contact.cargo} number={contact.phone} img={contact.ing} />
       ))}
 
       <SectionTitle>Convocatoria</SectionTitle>
