@@ -18,6 +18,7 @@ import {
   TeamDetail,
   PlayerDetail,
   TopScorerTable,
+  Sponsors,
 } from "../pages";
 
 const AppRouter: React.FC = () => {
@@ -30,6 +31,7 @@ const AppRouter: React.FC = () => {
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/call-up" element={<CallUp />} />
         <Route path="/playoffs" element={<PlayOffs />} />
+        <Route path="/sponsors" element={<Sponsors />} />
       </Route>
       <Route path="/team-detail" element={<TeamDetail />} />
       <Route path="/team-categories" element={<TeamCategories />} />
