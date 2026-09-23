@@ -6,6 +6,7 @@ import portada3 from "../../assets/images/portada/por3.png";
 import ga from "../../assets/images/sponsors/ga.jpeg";
 // import beto1 from "../../assets/images/sponsors/beto1.png";
 import nr from "../../assets/images/sponsors/nr.png";
+import jenny from "../../assets/images/sponsors/jenny.png";
 
 import ArticleIcon from "@mui/icons-material/Article";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
@@ -36,7 +37,8 @@ import { Sponsors } from "../../components";
 
 const portada = [portada1, portada2, portada3];
 const sponsorsData = [
-  { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerardo soy de la app, me puedes pasar mas informacion por favor?" },
+  { banner: jenny, phoneNumber: 1160341175, url: "", message: "Hola Iver, me gustaria saber sobre Jenny lenceria por favor" },
+  { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerardo, a como esta la cotizacion de envio para hoy?? " },
   // { banner: beto1, phoneNumber: 1151762134, url: "", message: "Hola Beto soy de la app, estoy buscando..." },
   { banner: nr, phoneNumber: 1133697922, url: "", message: "Hola Nestor tengo una consulta sobre mi automovil." },
   // { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerado soy de la app, me puedes pasar mas informacion por favor?" }, 
@@ -135,7 +137,7 @@ const Home: React.FC = () => {
           <UpdateInfo>
             <LiveDot />
             <span>
-              Última actualización: <strong>10 agosto 2026 • 22:05 </strong> hs
+              Última actualización: <strong>23 septiembre 2026 • 15:11 </strong> hs
             </span>
           </UpdateInfo>
           {/* <p>

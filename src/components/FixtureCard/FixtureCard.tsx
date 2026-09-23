@@ -163,7 +163,7 @@ const FixtureCard: React.FC<IFixtureCard> = ({
         <DetailsColumn>
           {group === 0 && (
             <TitleItem>
-              <strong>RE-COPA</strong>
+              <strong>RECOPA</strong>
               <SerieLabel serie={"C"}>FINAL</SerieLabel>
             </TitleItem>
           )}

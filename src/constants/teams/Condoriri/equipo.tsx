@@ -2,7 +2,7 @@ import type { ITeam } from "../../../types/types";
 //import { getProfile } from "./images/tools";
 export const condoriri: ITeam[] = [
   {
-    id: 1,
+    id: 7,
     grupo: "A",
     name: "Condoriri",
     logo: "",
