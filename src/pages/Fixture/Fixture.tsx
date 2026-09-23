@@ -88,23 +88,19 @@ const Fixture: React.FC = () => {
   const filteredMatches = useMemo(() => {
     return fixture
       .filter((match) => {
-        let matchStatusOk = false;
-
-        if (stGame === "all") {
-          matchStatusOk = true;
-        } else if (stGame === "willPlay") {
-          matchStatusOk =
-            match.status === "willPlay" ||
-            match.status === "" ||
-            match.status === "scheduled";
-        } else if (stGame === "scheduled") {
-          matchStatusOk =
-            match.status === "scheduled" || match.status === "canceled";
-        } else if (stGame === "played") {
-          matchStatusOk = match.status === "played";
-        } else {
-          matchStatusOk = match.status === stGame;
-        }
+        const matchStatusOk =
+          stGame === "all"
+            ? true
+            : stGame === "willPlay"
+            ?
+                match.status === "willPlay" ||
+                match.status === "" ||
+                match.status === "scheduled"
+            : stGame === "scheduled"
+            ? match.status === "scheduled" || match.status === "canceled"
+            : stGame === "played"
+            ? match.status === "played"
+            : match.status === stGame;
         const matchTeamOk =
           team === "all" || match.team1 === team || match.team2 === team;
 

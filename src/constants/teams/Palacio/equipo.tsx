@@ -2,7 +2,7 @@ import type { ITeam } from "../../../types/types";
 //import { getProfile } from "./images/tools";
 export const palacio: ITeam[] = [
   {
-    id: 2,
+    id: 6,
     grupo: "A",
     name: "Palacio",
     logo: "",
@@ -19,7 +19,7 @@ export const palacio: ITeam[] = [
         category: "Damas",
         players: [
         ],
-      },
+      },   
     ],
   },
 ];
