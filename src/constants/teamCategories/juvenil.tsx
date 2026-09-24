@@ -21,19 +21,19 @@ export const juvenil: ITeamCategoryItem[] = [
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
     logo: getLogo("Murifaya"),
     delegates: [
-            {
-        id: 1,
-        name: "Mario Gonzales Santos",
-        contact: "",
-        category: "Juvenil",
-      },
-      {
-        id: 2,
-        name: "Vicmar Acuna",
-        contact: "",
-        category: "Juvenil",
-      },
-    ],
+    //         {
+    //     id: 1,
+    //     name: "Mario Gonzales Santos",
+    //     contact: "",
+    //     category: "Juvenil",
+    //   },
+    //   {
+    //     id: 2,
+    //     name: "Vicmar Acuna",
+    //     contact: "",
+    //     category: "Juvenil",
+    //   },
+     ],
   },
     {
     id: 3,
@@ -43,7 +43,7 @@ export const juvenil: ITeamCategoryItem[] = [
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
     logo: getLogo("Chillagua"),
     delegates: [
-      { id: 1, name: "Jhoni Flores", contact: "", category: "Juvenil" },
+      // { id: 1, name: "Jhoni Flores", contact: "", category: "Juvenil" },
     ],
   },
     {
@@ -54,7 +54,7 @@ export const juvenil: ITeamCategoryItem[] = [
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
     logo: getLogo("Condoriri"),
     delegates: [
-      { id: 1, name: "Iver Carmona", contact: "", category: "Juvenil" },
+      // { id: 1, name: "Iver Carmona", contact: "", category: "Juvenil" },
     ],
   },
     {
@@ -71,7 +71,7 @@ export const juvenil: ITeamCategoryItem[] = [
         contact: "",
         category: "Juvenil",
       },
-      { id: 2, name: "Elzon Rivera Cruz", contact: "", category: "Juvenil" },
+      // { id: 2, name: "Elzon Rivera Cruz", contact: "", category: "Juvenil" },
     ],
   },
 ];
