@@ -50,7 +50,7 @@ export const juvenil: ITeamCategoryItem[] = [
     id: 4,
     series: "A",
     name: "Condoriri",
-    url: "",
+    url: "abierto",
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
     logo: getLogo("Condoriri"),
     delegates: [

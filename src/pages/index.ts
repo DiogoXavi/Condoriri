@@ -15,3 +15,5 @@ export { default as TeamDetail } from "./TeamDetail";
 export { default as PlayerDetail } from "./PlayerDetail";
 export { default as TopScorerTable } from "./TopScorerTable";
 export { default as Sponsors } from "./Sponsors";
+export { default as Login } from "./Login";
+export { default as PlayerRegister } from "./PlayerRegister";

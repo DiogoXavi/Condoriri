@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Root, DividerLine, ButtonContainer, TitleContainer } from "./styles";
 //import ShareIcon from "@mui/icons-material/Share";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
-import ContactsIcon from '@mui/icons-material/Contacts';
+import ContactsIcon from "@mui/icons-material/Contacts";
 import { teams } from "../../../../constants/teams/teams";
 import type { ITeam } from "../../../../types/types";
 
@@ -29,33 +29,39 @@ const TeamResume: FC<TeamResumeProps> = ({
   url,
   category,
 }) => {
+  const normalizeTeamName = (name: string) => {
+    return name
+      .replace(/\s+['"]?[AB]['"]?\s*$/i, "")
+      .trim()
+      .toLowerCase();
+  };
 
-const normalizeTeamName = (name: string) => {
-  return name
-    .replace(/\s+['"]?[AB]['"]?\s*$/i, "")
-    .trim()
-    .toLowerCase();
-};
+  const getIdTeam = (name: string) => {
+    const normalizedName = normalizeTeamName(name);
 
-const getIdTeam = (name: string) => {
-  const normalizedName = normalizeTeamName(name);
+    const team = teams.find(
+      (t: ITeam) => normalizeTeamName(t.name) === normalizedName,
+    );
 
-  const team = teams.find(
-    (t: ITeam) =>
-      normalizeTeamName(t.name) === normalizedName
-  );
-
-  return team ? team.id : null;
-};
+    return team ? team.id : null;
+  };
   const navigate = useNavigate();
   const handleShowTeam = (name: string, category: string) => {
-    navigate(`/team-detail?id=${getIdTeam(name)}&category=${encodeURIComponent(category)}`);
+    navigate(
+      `/team-detail?id=${getIdTeam(name)}&category=${encodeURIComponent(category)}`,
+    );
+  };
+
+  const handleRegister = () => {
+    navigate(
+      `/player-register/new?team=${encodeURIComponent(title)}&category=${encodeURIComponent(category)}`,
+    );
   };
 
   return (
     <Root>
       <TitleContainer>
-        <Typography variant="h2" color="secondary">
+        <Typography variant="h2">
           #{id}
           {" - "}
           {title}
@@ -88,19 +94,17 @@ const getIdTeam = (name: string) => {
           variant="outlined"
           startIcon={<ContactsIcon />}
         >
-        VER PLANTEL
+          VER PLANTEL
         </Button>
-      {url && (
+        {url && (
           <Button
-            onClick={() => {
-              window.open(url);
-            }}
+            onClick={handleRegister}
             variant="contained"
             startIcon={<BorderColorIcon />}
           >
-            PRE-INSCRIPCION
+            REGISTRARSE
           </Button>
-      )}
+        )}
       </ButtonContainer>
     </Root>
   );

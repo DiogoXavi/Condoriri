@@ -194,6 +194,7 @@ export interface IPlayerDB {
   category: "Juvenil" | "Senior" | "Damas" | "Infantil";
   likes: number;
   rating: number;
+  phone_number?: string;
   created_at?: string;
 }
 
