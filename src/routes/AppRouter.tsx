@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Search } from "../layouts";
+import { Search, ProtectedRoutes } from "../layouts";
 import {
   Home,
   About,
@@ -19,6 +19,8 @@ import {
   PlayerDetail,
   TopScorerTable,
   Sponsors,
+  Login,
+  PlayerRegister,
 } from "../pages";
 
 const AppRouter: React.FC = () => {
@@ -43,6 +45,10 @@ const AppRouter: React.FC = () => {
       <Route path="/players-admin" element={<PlayersAdmin />} />
       <Route path="/player-detail" element={<PlayerDetail />} />
       <Route path="/top-scorers-table" element={<TopScorerTable />} />
+      <Route path="/login" element={<Login />} />
+         <Route element={<ProtectedRoutes />}>
+      <Route path="/player-register/new" element={<PlayerRegister />} />
+      </Route>
     </Routes>
   );
 };

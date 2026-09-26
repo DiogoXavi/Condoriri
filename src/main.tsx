@@ -8,7 +8,17 @@ import App from "./App";
 import theme from "./theme";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-//import { PlayerProvider } from "./context/PlayerContext";
+import { PlayerProvider } from "./context/PlayerContext";
+import { AuthProvider } from "./context/AuthContext";
+import AOSProvider  from "./providers/AOSProvider"
+// import Hotjar from "@hotjar/browser";
+//import { HotjarTracker } from "./components";
+
+// const siteId = Number(import.meta.env.VITE_HOTJAR_SITE_ID);
+
+// if (siteId) {
+//   Hotjar.init(siteId, 6);
+// }
 
 const queryClient = new QueryClient();
 
@@ -17,25 +27,17 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <QueryClientProvider client={queryClient}>
-          {/* <PlayerProvider> */}
-            <App />
-          {/* </PlayerProvider> */}
-        </QueryClientProvider>
+      {/* <HotjarTracker /> */}
+        <AuthProvider>
+          <QueryClientProvider client={queryClient}>
+            <PlayerProvider>
+              <AOSProvider />
+                <App />
+            </PlayerProvider>
+          </QueryClientProvider>
+        </AuthProvider>
         <Toaster position="top-right" />
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
 );
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then(() => {
-        console.log("Service Worker registrado");
-      })
-      .catch((error) => {
-        console.log("Error registrando SW:", error);
-      });
-  });
-}

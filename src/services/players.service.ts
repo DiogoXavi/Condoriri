@@ -124,3 +124,19 @@ export const uploadPlayerImage = async (file: File): Promise<string> => {
 
   return data.publicUrl;
 };
+
+// ================= CHECK DNI =================
+export const isDniRegistered = async (dni: string): Promise<boolean> => {
+  const { data, error } = await supabase
+    .from("players")
+    .select("id")
+    .eq("dni", dni.trim())
+    .maybeSingle();
+
+  if (error) {
+    console.error("❌ Error checking DNI:", error.message);
+    throw new Error(error.message);
+  }
+
+  return !!data;
+};

@@ -1,4 +1,10 @@
-import React, { createContext, useEffect, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+
 import { supabase } from "../lib/supabase";
 import type { IPlayerDB } from "../types/types";
 
@@ -10,61 +16,77 @@ type PlayerContextType = {
 
 const PlayerContext = createContext<PlayerContextType | null>(null);
 
-export const PlayerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const PlayerProvider: React.FC<{
+  children: React.ReactNode;
+}> = ({ children }) => {
   const [players, setPlayers] = useState<IPlayerDB[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadPlayers = async () => {
-      const { data, error } = await supabase.from("players").select("*");
+      try {
+        const cached = localStorage.getItem("players");
 
-      if (error) {
+        if (cached) {
+          const parsedPlayers = JSON.parse(cached);
+
+          if (Array.isArray(parsedPlayers)) {
+            setPlayers(parsedPlayers);
+            setLoading(false);
+            return;
+          }
+        }
+
+        const { data, error } = await supabase
+          .from("players")
+          .select("*");
+
+        if (error) {
+          console.error("Error cargando jugadores:", error);
+          setPlayers([]);
+          return;
+        }
+
+        const playersData = data ?? [];
+
+        setPlayers(playersData);
+
+        localStorage.setItem(
+          "players",
+          JSON.stringify(playersData)
+        );
+      } catch (error) {
         console.error("Error cargando jugadores:", error);
+        setPlayers([]);
+      } finally {
+        setLoading(false);
       }
-
-      setPlayers(data || []);
-      setLoading(false);
     };
 
     loadPlayers();
   }, []);
 
-const playerMap = useMemo(() => {
-  const map = new Map<string, IPlayerDB>();
+  const playerMap = useMemo(() => {
+    const map = new Map<string, IPlayerDB>();
 
-  players.forEach((p) => {
-    map.set(`${p.category}-${p.team}-${p.number}`, p);
-  });
+    players.forEach((player) => {
+      map.set(
+        `${player.category}-${player.team}-${player.number}`,
+        player
+      );
+    });
 
-  return map;
-}, [players]);
-
-  useEffect(() => {
-  const loadPlayers = async () => {
-    const cached = localStorage.getItem("players");
-
-    if (cached) {
-      setPlayers(JSON.parse(cached));
-      setLoading(false);
-      return;
-    }
-
-    const { data, error } = await supabase.from("players").select("*");
-
-    if (error) {
-      console.error("Error:", error);
-    }
-
-    setPlayers(data || []);
-    localStorage.setItem("players", JSON.stringify(data));
-    setLoading(false);
-  };
-
-  loadPlayers();
-}, []);
+    return map;
+  }, [players]);
 
   return (
-    <PlayerContext.Provider value={{ players, playerMap, loading }}>
+    <PlayerContext.Provider
+      value={{
+        players,
+        playerMap,
+        loading,
+      }}
+    >
       {children}
     </PlayerContext.Provider>
   );
