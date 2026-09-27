@@ -15,7 +15,7 @@ import AddToHomeScreenIcon from "@mui/icons-material/AddToHomeScreen";
 //import SchemaIcon from "@mui/icons-material/Schema";
 
 import { Header, Hero, Footer } from "../../components";
-//import { useNotifications } from "../../hooks/useNotifications";
+import { useNotifications } from "../../hooks/useNotifications";
 import type { BeforeInstallPromptEvent } from "../../types/types";
 
 import {
@@ -37,26 +37,37 @@ import { Sponsors } from "../../components";
 
 const portada = [portada1, portada2, portada3];
 const sponsorsData = [
-  { banner: jenny, phoneNumber: 1160341175, url: "", message: "Hola Iver, me gustaria saber sobre Jenny lenceria por favor" },
-  { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerardo, a como esta la cotizacion de envio para hoy?? " },
+  {
+    banner: jenny,
+    phoneNumber: 1160341175,
+    url: "",
+    message: "Hola Iver, me gustaria saber sobre Jenny lenceria por favor",
+  },
+  {
+    banner: ga,
+    phoneNumber: 1127305021,
+    url: "",
+    message: "Hola Gerardo, a como esta la cotizacion de envio para hoy?? ",
+  },
   // { banner: beto1, phoneNumber: 1151762134, url: "", message: "Hola Beto soy de la app, estoy buscando..." },
-  { banner: nr, phoneNumber: 1133697922, url: "", message: "Hola Nestor tengo una consulta sobre mi automovil." },
-  // { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerado soy de la app, me puedes pasar mas informacion por favor?" }, 
+  {
+    banner: nr,
+    phoneNumber: 1133697922,
+    url: "",
+    message: "Hola Nestor tengo una consulta sobre mi automovil.",
+  },
+  // { banner: ga, phoneNumber: 1127305021, url: "", message: "Hola Gerado soy de la app, me puedes pasar mas informacion por favor?" },
   // { banner: beto1, phoneNumber: 1151762134, url: "", message: "Hola Beto soy de la app, estoy buscando..." },
 ];
 
-//const LAST_SEEN_KEY = "lastSeenNotificationId";
+const LAST_SEEN_KEY = "lastSeenNotificationId";
 
 const Home: React.FC = () => {
-  //const { notifications } = useNotifications();
+  const { notifications } = useNotifications();
 
-  // const [lastSeenId, setLastSeenId] = useState<number | null>(() => {
-  //   const storedId = localStorage.getItem(LAST_SEEN_KEY);
-  //   return storedId ? Number(storedId) : null;
-  // });
-  
-  const handleOpenNotifications = (() => {
-    console.log("abriendo Notificaciones.");
+  const [lastSeenId, setLastSeenId] = useState<number | null>(() => {
+    const storedId = localStorage.getItem(LAST_SEEN_KEY);
+    return storedId ? Number(storedId) : null;
   });
 
   const [deferredPrompt, setDeferredPrompt] =
@@ -86,22 +97,22 @@ const Home: React.FC = () => {
     };
   }, []);
 
-  // const hasNewNotifications = (() => {
-  //   if (!notifications.length) return false;
+  const hasNewNotifications = (() => {
+    if (!notifications.length) return false;
 
-  //   const latestId = Math.max(...notifications.map((n) => n.id));
+    const latestId = Math.max(...notifications.map((n) => n.id));
 
-  //   return !lastSeenId || latestId > lastSeenId;
-  // })();
+    return !lastSeenId || latestId > lastSeenId;
+  })();
 
-  // const handleOpenNotifications = () => {
-  //   if (notifications.length > 0) {
-  //     const latestId = Math.max(...notifications.map((n) => n.id));
+  const handleOpenNotifications = () => {
+    if (notifications.length > 0) {
+      const latestId = Math.max(...notifications.map((n) => n.id));
 
-  //     setLastSeenId(latestId);
-  //     localStorage.setItem(LAST_SEEN_KEY, String(latestId));
-  //   }
-  // };
+      setLastSeenId(latestId);
+      localStorage.setItem(LAST_SEEN_KEY, String(latestId));
+    }
+  };
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
@@ -113,7 +124,7 @@ const Home: React.FC = () => {
 
     if (choiceResult.outcome === "accepted") {
       console.log("Usuario instaló la app");
-    }else{
+    } else {
       console.log("Usuario rechazó la instalación de la app");
     }
 
@@ -137,7 +148,8 @@ const Home: React.FC = () => {
           <UpdateInfo>
             <LiveDot />
             <span>
-              Última actualización: <strong>23 septiembre 2026 • 15:11 </strong> hs
+              Última actualización: <strong>26 septiembre 2026 • 21:46 </strong>{" "}
+              hs
             </span>
           </UpdateInfo>
           {/* <p>
@@ -150,11 +162,12 @@ const Home: React.FC = () => {
           <Cards to="/notifications" onClick={handleOpenNotifications}>
             <NotificationIconWrapper>
               <NotificationsIcon fontSize="large" />
-              <NotificationDot />
+
+              {hasNewNotifications && <NotificationDot />}
             </NotificationIconWrapper>
             <span>Notificaciones</span>
           </Cards>
-          
+
           <Cards to="/call-up">
             <ArticleIcon fontSize="large" />
             <span>Convocatoria</span>
@@ -200,7 +213,7 @@ const Home: React.FC = () => {
           <h3
             style={{
               marginBottom: 0,
-              color: '#6cb9ff',
+              color: "#6cb9ff",
               fontWeight: 700,
               fontSize: 20,
             }}
