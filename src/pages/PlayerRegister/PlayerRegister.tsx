@@ -331,10 +331,15 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
             required
             fullWidth
           >
-            <MenuItem value="Arquero">Arquero</MenuItem>
             <MenuItem value="Defensor">Defensor</MenuItem>
-            <MenuItem value="Mediocampista">Mediocampista</MenuItem>
             <MenuItem value="Delantero">Delantero</MenuItem>
+            <MenuItem value="Mediocampista">Mediocampista</MenuItem>
+            <MenuItem value="Lateral izquierdo">Lateral izquierdo</MenuItem>
+            <MenuItem value="Lateral derecho">Lateral derecho</MenuItem>
+            <MenuItem value="Centro delantero">Centro delantero</MenuItem>
+            <MenuItem value="Portero">Portero</MenuItem>
+            <MenuItem value="Delegado">Delegado</MenuItem>
+            <MenuItem value="DT">DT</MenuItem>
           </TextField>
           <TextField
             label="Número de WhatsApp"
