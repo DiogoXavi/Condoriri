@@ -10,6 +10,7 @@ export const NotificationContainer = styled(Stack)(() => ({
   flexDirection: "column",
   gap: "1rem",
   boxSizing: "border-box",
+  borderRadius: "10%",
 }));
 
 export const StyledAlert = styled(Alert)(() => ({

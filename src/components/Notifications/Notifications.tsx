@@ -6,6 +6,20 @@ import { Divider, Skeleton, Box, Typography } from "@mui/material";
 
 import { useNotifications } from "../../hooks/useNotifications";
 
+const formatNotificationDate = (date?: string) => {
+  if (!date) {
+    return "Fecha no disponible";
+  }
+
+  const dateObject = new Date(date);
+  const day = String(dateObject.getDate()).padStart(2, "0");
+  const month = String(dateObject.getMonth() + 1).padStart(2, "0");
+  const year = dateObject.getFullYear();
+  const hours = String(dateObject.getHours()).padStart(2, "0");
+  const minutes = String(dateObject.getMinutes()).padStart(2, "0");
+  return `${day}-${month}-${year} | ${hours}:${minutes}`;
+};
+
 const Notifications: React.FC = () => {
   const { notifications, loading } = useNotifications();
 
@@ -36,7 +50,7 @@ const Notifications: React.FC = () => {
           <AlertTitle>{notification.title}</AlertTitle>
           {notification.description}
           <Divider sx={{ marginTop: "0.75rem" }} />
-          <DateContent>{notification.date}</DateContent>
+          <DateContent>{formatNotificationDate(notification.date)}</DateContent>
         </StyledAlert>
       ))}
     </NotificationContainer>
