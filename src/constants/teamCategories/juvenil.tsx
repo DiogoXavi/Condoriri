@@ -7,7 +7,7 @@ export const juvenil: ITeamCategoryItem[] = [
     id: 1,
     series: "A",
     name: "Ocuri",
-    url: "",
+    url: "abierto",
     // url: "https://forms.gle/kuXGysPJVMphh9eD8",
     logo: getLogo("Ocuri"),
     delegates: [
@@ -17,7 +17,7 @@ export const juvenil: ITeamCategoryItem[] = [
     id: 2,
     series: "A",
     name: "Murifaya",
-    url: "",
+    url: "abierto",
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
     logo: getLogo("Murifaya"),
     delegates: [
@@ -39,7 +39,7 @@ export const juvenil: ITeamCategoryItem[] = [
     id: 3,
     series: "A",
     name: "Chillagua",
-    url: "",
+    url: "abierto",
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
     logo: getLogo("Chillagua"),
     delegates: [
@@ -61,7 +61,7 @@ export const juvenil: ITeamCategoryItem[] = [
     id: 5,
     series: "A",
     name: "Palacio",
-    url: "",
+    url: "abierto",
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
     logo: getLogo("Palacio"),
     delegates: [
