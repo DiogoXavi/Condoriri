@@ -38,7 +38,6 @@ const TeamResume: FC<TeamResumeProps> = ({
 
   const getIdTeam = (name: string) => {
     const normalizedName = normalizeTeamName(name);
-
     const team = teams.find(
       (t: ITeam) => normalizeTeamName(t.name) === normalizedName,
     );
@@ -46,16 +45,27 @@ const TeamResume: FC<TeamResumeProps> = ({
     return team ? team.id : null;
   };
   const navigate = useNavigate();
-  const handleShowTeam = (name: string, category: string) => {
-    navigate(
-      `/team-detail?id=${getIdTeam(name)}&category=${encodeURIComponent(category)}`,
-    );
+  const handleShowTeam = (name: string, category: string, teamUrl?: string) => {
+    const params = new URLSearchParams();
+    const teamId = getIdTeam(name);
+    if (teamId !== null) {
+      params.set("id", String(teamId));
+    }
+    params.set("category", category);
+    if (teamUrl) {
+      params.set("url", teamUrl);
+    }
+    navigate(`/team-detail?${params.toString()}`);
   };
 
   const handleRegister = () => {
-    navigate(
-      `/player-register/new?team=${encodeURIComponent(title)}&category=${encodeURIComponent(category)}`,
-    );
+    const params = new URLSearchParams();
+    params.set("team", title);
+    params.set("category", category);
+    if (url) {
+      params.set("url", url);
+    }
+    navigate(`/player-register/new?${params.toString()}`);
   };
 
   return (
@@ -90,7 +100,7 @@ const TeamResume: FC<TeamResumeProps> = ({
       </div>
       <ButtonContainer>
         <Button
-          onClick={() => handleShowTeam(title, category)}
+          onClick={() => handleShowTeam(title, category, url)}
           variant="outlined"
           startIcon={<ContactsIcon />}
         >

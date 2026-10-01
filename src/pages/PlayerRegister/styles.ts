@@ -2,6 +2,10 @@ import { styled } from "@mui/material/styles";
 import { Paper } from "@mui/material";
 import type { PaperProps } from "@mui/material";
 
+interface HeaderContainerProps extends PaperProps {
+  color: string;
+}
+
 export const Root = styled("main")(({ theme }) => ({
   width: "100%",
   maxWidth: "1000px",
@@ -17,12 +21,14 @@ export const Root = styled("main")(({ theme }) => ({
   },
 }));
 
-export const HeaderContainer = styled(Paper)<PaperProps>(({ theme }) => ({
+
+export const HeaderContainer = styled(Paper, {
+  shouldForwardProp: (prop) => prop !== "color",
+})<HeaderContainerProps>(({ color }) => ({
   padding: "10px",
   display: "flex",
-  //flexDirection: "column",
   borderRadius: "16px",
-  backgroundColor: theme.palette.primary.light,
+  backgroundColor: color,
   boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
   gap: "12px",
   justifyContent: "space-around",

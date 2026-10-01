@@ -18,7 +18,7 @@ import {
   LogoContent,
   IfoContent,
 } from "./styles";
-import type { IPlayerDB } from "../../types/types";
+import type { IPlayerDB, ITeam } from "../../types/types";
 import {
   createPlayer,
   isDniRegistered,
@@ -26,6 +26,7 @@ import {
 } from "../../services/players.service";
 import { PlayerConfirmDialog, ImageCropDialog } from "./componets";
 import { getLogo } from "../../tools/tools";
+import { teams } from "../../constants/teams/teams"
 type PlayerForm = Omit<
   IPlayerDB,
   "id" | "created_at" | "status" | "likes" | "rating"
@@ -245,9 +246,18 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     );
   }
 
+const getTeamColor = (teamName: string) => {
+  const selectedTeam = teams.find(
+    (item: ITeam) => item.name.toLowerCase() === teamName.toLowerCase()
+  );
+
+  return selectedTeam?.color || "#6cb9ff'";
+};
+
+
   return (
     <Root>
-      <HeaderContainer>
+      <HeaderContainer color={getTeamColor(team)}>
         <LogoContent>
           <img
             src={getLogo(team)}
