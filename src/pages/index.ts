@@ -17,3 +17,4 @@ export { default as TopScorerTable } from "./TopScorerTable";
 export { default as Sponsors } from "./Sponsors";
 export { default as Login } from "./Login";
 export { default as PlayerRegister } from "./PlayerRegister";
+export { default as Credentials } from "./Credentials";

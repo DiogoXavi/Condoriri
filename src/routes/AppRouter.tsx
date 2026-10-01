@@ -21,6 +21,7 @@ import {
   Sponsors,
   Login,
   PlayerRegister,
+  Credentials,
 } from "../pages";
 
 const AppRouter: React.FC = () => {
@@ -42,6 +43,7 @@ const AppRouter: React.FC = () => {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/equipos" element={<Equipos />} />
       <Route path="/notifications-admin" element={<NotificationsAdmin />} />
+       <Route path="/credentials" element={<Credentials />} />
       <Route path="/players-admin" element={<PlayersAdmin />} />
       <Route path="/player-detail" element={<PlayerDetail />} />
       <Route path="/top-scorers-table" element={<TopScorerTable />} />

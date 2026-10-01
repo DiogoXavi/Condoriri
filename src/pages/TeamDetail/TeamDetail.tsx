@@ -6,6 +6,7 @@ import { Button, Typography, Box, Skeleton } from "@mui/material";
 import ReplyIcon from "@mui/icons-material/Reply";
 import ShareIcon from "@mui/icons-material/Share";
 import HomeIcon from "@mui/icons-material/Home";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
 
 import {
   ButtonContainer,
@@ -25,6 +26,10 @@ const DetailTeam: React.FC = () => {
   const queryParams = new URLSearchParams(location.search);
   const idTeamParam = queryParams.get("id");
   const categoryParam = queryParams.get("category");
+  const urlParam = queryParams.get("url");
+
+  console.log("url-----", urlParam);
+  
 
   const idTeam =
     idTeamParam && !isNaN(Number(idTeamParam)) ? Number(idTeamParam) : null;
@@ -127,11 +132,15 @@ const DetailTeam: React.FC = () => {
     );
   }
 
-  // ❌ no team
   if (!team) {
     return <Typography variant="h3">Equipo no encontrado.</Typography>;
   }
 
+  const handleRegister = () => {
+    navigate(
+      `/player-register/new?team=${encodeURIComponent(team.name)}&category=${encodeURIComponent(selectedCategory)}`,
+    );
+  };
   return (
     <>
       <HeaderTeam
@@ -144,6 +153,34 @@ const DetailTeam: React.FC = () => {
       />
 
       <CardContainer>
+        <ButtonContainer>
+          {urlParam && (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleRegister}
+              startIcon={<PersonAddIcon />}
+            >
+              REGISTRARME
+            </Button>
+          )}
+          <Button
+            variant="outlined"
+            color="secondary"
+            onClick={onShare}
+            startIcon={<ShareIcon />}
+          >
+            COMPARTIR
+          </Button>
+          <Button
+            variant="outlined"
+            color="secondary"
+            onClick={handleBack}
+            startIcon={canGoBack ? <ReplyIcon /> : <HomeIcon />}
+          >
+            {canGoBack ? "VOLVER" : "INICIO"}
+          </Button>
+        </ButtonContainer>
         {selectedPlayers.length > 0 ? (
           <>
             {selectedPlayers.map((player, index) => (
@@ -162,7 +199,7 @@ const DetailTeam: React.FC = () => {
               />
             ))}
 
-            <ButtonContainer>
+            {/* <ButtonContainer>
               <Button
                 variant="contained"
                 color="primary"
@@ -180,14 +217,13 @@ const DetailTeam: React.FC = () => {
               >
                 {canGoBack ? "VOLVER" : "INICIO"}
               </Button>
-            </ButtonContainer>
+            </ButtonContainer> */}
           </>
         ) : (
           <MessageContent>
             <Typography variant="h3" color="primary">
               Aún no hay jugadores registrados.
             </Typography>
-
             <Typography variant="h6" color="secondary">
               Por favor contactar con el delegado de su comunidad
             </Typography>
