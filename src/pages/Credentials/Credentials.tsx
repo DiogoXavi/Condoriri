@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { getLogo } from "../../tools/tools";
 import logo from "../../assets/images/icons/logo1.png";
-import watermarker from "../../assets/images/logos/logo.png";
+import watermarker from "../../assets/images/logos/logo1.png";
 import signature from "../../assets/images/logos/signature.png";
 import flag from "../../assets/images/logos/flag.png";
 import { useTeamsWithPlayers } from "../../hooks/useTeamsWithPlayers";
@@ -83,14 +83,13 @@ const Credenciales: React.FC = () => {
         const element = batch[i] as HTMLElement;
 
         const canvas = await html2canvas(element, {
-          scale: 1.5,
-          useCORS: true, // ✅ FIX imágenes
+          scale: 3,
+          useCORS: true,
           allowTaint: true,
         });
 
-        const imgData = canvas.toDataURL("image/png", 0.1);
+        const imgData = canvas.toDataURL("image/png");
 
-        // 👉 posición
         const indexOnPage = i % cardsPerPage;
         const col = indexOnPage % cardsPerRow;
         const row = Math.floor(indexOnPage / cardsPerRow);
@@ -98,14 +97,12 @@ const Credenciales: React.FC = () => {
         const x = marginX + col * cardWidth;
         const y = marginY + row * cardHeight;
 
-        pdf.addImage(imgData, "JPEG", x, y, cardWidth, cardHeight);
+        pdf.addImage(imgData, "PNG", x, y, cardWidth, cardHeight);
 
-        // 👉 nueva página
         if ((i + 1) % cardsPerPage === 0 && i !== batch.length - 1) {
           pdf.addPage();
         }
 
-        // 🧹 liberar memoria
         canvas.width = 0;
         canvas.height = 0;
       }
@@ -130,7 +127,6 @@ const Credenciales: React.FC = () => {
 
   return (
     <>
-      {/* 🔥 CONTROLES */}
       <div style={{ textAlign: "center", margin: "20px" }}>
         <Select
           value={selectedCategory}
@@ -163,7 +159,6 @@ const Credenciales: React.FC = () => {
         <DownloadButton onClick={downloadPDF}>Descargar PDF</DownloadButton>
       </div>
 
-      {/* 📋 CARDS */}
       <GridContainer>
   {equipos
     .filter((team) =>
@@ -180,7 +175,7 @@ const Credenciales: React.FC = () => {
           subTeam.players.map((player) => {
             const exportId = `credencial-img-${team.id}-${subTeam.id}-${player.id}`;
 
-            const playerUrl = `https://campeonato-d6.vercel.app/player-detail?idPlayer=${player.id}&idTeam=${team.id}&category=${subTeam.category}`;
+            const playerUrl = `https://condoriri.vercel.app/player-detail?idPlayer=${player.id}&idTeam=${team.id}&category=${subTeam.category}`;
 
             return (
               <div key={exportId} style={{ textAlign: "center" }}>
@@ -188,7 +183,7 @@ const Credenciales: React.FC = () => {
                   <CardContent>
                     <HederCredential>
                       <ChampionshipLogo src={logo} />
-                      <CardTitle>CINTIS-2026</CardTitle>
+                      <CardTitle>DISTRITO-7 2026</CardTitle>
                     </HederCredential>
 
                     <BodyCredential>
@@ -244,9 +239,9 @@ const Credenciales: React.FC = () => {
                               <img src={signature} style={{ width: "80px" }} />
 
                               <p style={{ fontSize: "10px", margin: 0 }}>
-                                <strong>STRIO. DE TEGNOLOGIA</strong>
+                                <strong>ORGANIZADOR</strong>
                                 <br />
-                                Carlos Cuba
+                                Iver Carmona
                               </p>
                             </div>
                           </QRWrapper>

@@ -26,7 +26,7 @@ const Login: React.FC = () => {
   const { user, signIn, loading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("campeonato-d7@gmail.com");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
