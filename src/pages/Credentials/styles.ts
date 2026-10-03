@@ -11,7 +11,7 @@ export const Card = styled("div")(({ theme }) => ({
   borderRadius: "15px",
   overflow: "hidden",
   width: "270px",
-  background: "linear-gradient(135deg, #f5fafaff 0%, #29ef36 100%)",
+  background: "linear-gradient(135deg, #f5fafaff 0%, #1cafee 100%)",
   textAlign: "center",
   boxShadow: theme.shadows[6],
   fontFamily: "'Oswald', sans-serif",

@@ -28,9 +28,6 @@ const DetailTeam: React.FC = () => {
   const categoryParam = queryParams.get("category");
   const urlParam = queryParams.get("url");
 
-  console.log("url-----", urlParam);
-  
-
   const idTeam =
     idTeamParam && !isNaN(Number(idTeamParam)) ? Number(idTeamParam) : null;
 
@@ -164,14 +161,16 @@ const DetailTeam: React.FC = () => {
               REGISTRARME
             </Button>
           )}
-          <Button
-            variant="outlined"
-            color="secondary"
-            onClick={onShare}
-            startIcon={<ShareIcon />}
-          >
-            COMPARTIR
-          </Button>
+          {selectedPlayers.length > 0 && (
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={onShare}
+              startIcon={<ShareIcon />}
+            >
+              COMPARTIR
+            </Button>
+          )}
           <Button
             variant="outlined"
             color="secondary"

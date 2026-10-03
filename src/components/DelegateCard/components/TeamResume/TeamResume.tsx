@@ -3,7 +3,7 @@ import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Root, DividerLine, ButtonContainer, TitleContainer } from "./styles";
 //import ShareIcon from "@mui/icons-material/Share";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
+//import BorderColorIcon from "@mui/icons-material/BorderColor";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import { teams } from "../../../../constants/teams/teams";
 import type { ITeam } from "../../../../types/types";
@@ -58,15 +58,15 @@ const TeamResume: FC<TeamResumeProps> = ({
     navigate(`/team-detail?${params.toString()}`);
   };
 
-  const handleRegister = () => {
-    const params = new URLSearchParams();
-    params.set("team", title);
-    params.set("category", category);
-    if (url) {
-      params.set("url", url);
-    }
-    navigate(`/player-register/new?${params.toString()}`);
-  };
+  // const handleRegister = () => {
+  //   const params = new URLSearchParams();
+  //   params.set("team", title);
+  //   params.set("category", category);
+  //   if (url) {
+  //     params.set("url", url);
+  //   }
+  //   navigate(`/player-register/new?${params.toString()}`);
+  // };
 
   return (
     <Root>
@@ -106,7 +106,7 @@ const TeamResume: FC<TeamResumeProps> = ({
         >
           VER PLANTEL
         </Button>
-        {url && (
+        {/* {url && (
           <Button
             onClick={handleRegister}
             variant="contained"
@@ -114,7 +114,7 @@ const TeamResume: FC<TeamResumeProps> = ({
           >
             REGISTRARSE
           </Button>
-        )}
+        )} */}
       </ButtonContainer>
     </Root>
   );

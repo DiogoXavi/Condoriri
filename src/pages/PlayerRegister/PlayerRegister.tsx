@@ -26,7 +26,7 @@ import {
 } from "../../services/players.service";
 import { PlayerConfirmDialog, ImageCropDialog } from "./componets";
 import { getLogo } from "../../tools/tools";
-import { teams } from "../../constants/teams/teams"
+import { teams } from "../../constants/teams/teams";
 type PlayerForm = Omit<
   IPlayerDB,
   "id" | "created_at" | "status" | "likes" | "rating"
@@ -108,41 +108,41 @@ const PlayerRegister: React.FC = () => {
     };
   }, [imagePreview, imageToCrop]);
 
-const capitalizeWords = (value: string) => {
-  return value
-    .toLocaleLowerCase("es")
-    .replace(/(^|\s)([a-záéíóúüñ])/g, (_, space, char) => {
-      return `${space}${char.toLocaleUpperCase("es")}`;
-    });
-};
+  const capitalizeWords = (value: string) => {
+    return value
+      .toLocaleLowerCase("es")
+      .replace(/(^|\s)([a-záéíóúüñ])/g, (_, space, char) => {
+        return `${space}${char.toLocaleUpperCase("es")}`;
+      });
+  };
 
-const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  const { name, value } = event.target;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
 
-  if (name === "number") {
-    const numberValue = value.replace(/\D/g, "").slice(0, 2);
+    if (name === "number") {
+      const numberValue = value.replace(/\D/g, "").slice(0, 2);
+
+      setForm((prev) => ({
+        ...prev,
+        number: numberValue ? Number(numberValue) : 0,
+      }));
+
+      setError("");
+      setSuccess(false);
+      return;
+    }
+
+    const formattedValue =
+      name === "full_name" || name === "name" ? capitalizeWords(value) : value;
 
     setForm((prev) => ({
       ...prev,
-      number: numberValue ? Number(numberValue) : 0,
+      [name]: formattedValue,
     }));
 
     setError("");
     setSuccess(false);
-    return;
-  }
-
-  const formattedValue =
-    name === "full_name" || name === "name" ? capitalizeWords(value) : value;
-
-  setForm((prev) => ({
-    ...prev,
-    [name]: formattedValue,
-  }));
-
-  setError("");
-  setSuccess(false);
-};
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -246,14 +246,13 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     );
   }
 
-const getTeamColor = (teamName: string) => {
-  const selectedTeam = teams.find(
-    (item: ITeam) => item.name.toLowerCase() === teamName.toLowerCase()
-  );
+  const getTeamColor = (teamName: string) => {
+    const selectedTeam = teams.find(
+      (item: ITeam) => item.name.toLowerCase() === teamName.toLowerCase(),
+    );
 
-  return selectedTeam?.color || "#6cb9ff'";
-};
-
+    return selectedTeam?.color || "#6cb9ff'";
+  };
 
   return (
     <Root>
@@ -460,7 +459,7 @@ const getTeamColor = (teamName: string) => {
             disabled={loading}
             onClick={() => navigate(-1)}
           >
-            CANCELAR
+            VOLVER
           </Button>
           <Button
             type="submit"
