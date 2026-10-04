@@ -31,19 +31,15 @@ const Header: React.FC = () => {
       case "fixture":
         navigate(`/fixture?query=${description}`);
         break;
-
       case "table":
         navigate(`/table?query=${description}`);
         break;
-
       case "teams":
         navigate(`/team-categories?query=${description}`);
         break;
-
       case "scorers":
         navigate(`/top-scorers-table?query=${description}`);
         break;
-
       default:
         console.warn("Ruta no encontrada:", description);
         break;
@@ -64,8 +60,8 @@ const Header: React.FC = () => {
     }
 
     const shareData = {
-      title: "Futbol Ditroto-6 2026",
-      text: "¡Mira el Campeonato de Futbol Ditroto-6 2026! Toda la información sobre equipos, jugadores y estadísticas.",
+      title: "Futbol Ditroto-7 2026",
+      text: "¡Mira el Campeonato de Futbol Ditroto-7 2026! Toda la información sobre equipos, jugadores y estadísticas.",
       url: window.location.href,
     };
 
@@ -102,7 +98,6 @@ const Header: React.FC = () => {
         </Tooltip>
       </LogoContainer>
 
-      {/* NAVEGACIÓN */}
       <ButtonContainer>
         <NavButton
           active={location.pathname === "/fixture"}
@@ -110,21 +105,18 @@ const Header: React.FC = () => {
         >
           FIXTURE
         </NavButton>
-
         <NavButton
           active={location.pathname === "/table"}
           onClick={() => handleNavigate("table")}
         >
           {isMobile ? "TABLA" : "TABLA DE POSICIONES"}
         </NavButton>
-
         <NavButton
           active={location.pathname === "/top-scorers-table"}
           onClick={() => handleNavigate("scorers")}
         >
           {isMobile ? "GOLEADORES" : "TABLA DE GOLEADORES"}
         </NavButton>
-
         <NavButton
           active={location.pathname === "/team-categories"}
           onClick={() => handleNavigate("teams")}
