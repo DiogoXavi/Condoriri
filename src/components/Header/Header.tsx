@@ -1,41 +1,60 @@
 import React from "react";
 import logo from "../../assets/images/icons/logo1.png";
-import { Tooltip, Button, useMediaQuery } from "@mui/material";
+import { Tooltip, useMediaQuery } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import HomeIcon from "@mui/icons-material/Home";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { supabase } from "../../lib/supabase";
+import { useAuth } from "../../context/auth.context";
+
 import {
   Container,
   Logo,
   ButtonContainer,
   LogoContainer,
   HomeButton,
-  NavButtonStyle,
+  NavButton,
 } from "./styles";
+
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
   const isMobile = useMediaQuery("(max-width:600px)");
+  const { user } = useAuth();
 
   const handleNavigate = (description: string) => {
     switch (description) {
       case "fixture":
         navigate(`/fixture?query=${description}`);
         break;
+
       case "table":
         navigate(`/table?query=${description}`);
         break;
+
       case "teams":
         navigate(`/team-categories?query=${description}`);
         break;
+
       case "scorers":
         navigate(`/top-scorers-table?query=${description}`);
         break;
+
       default:
         console.warn("Ruta no encontrada:", description);
         break;
     }
+  };
+  const handleAuth = async () => {
+    if (user) {
+      await supabase.auth.signOut();
+      return;
+    }
+    navigate("/login");
   };
 
   const onShare = () => {
@@ -45,8 +64,8 @@ const Header: React.FC = () => {
     }
 
     const shareData = {
-      title: "Campeonato Distrito 7 San Lucas 2026",
-      text: "¡Mira el Campeonato Distrito 7 San Lucas 2026! Toda la información sobre equipos, jugadores y estadísticas.",
+      title: "Futbol Ditroto-6 2026",
+      text: "¡Mira el Campeonato de Futbol Ditroto-6 2026! Toda la información sobre equipos, jugadores y estadísticas.",
       url: window.location.href,
     };
 
@@ -59,46 +78,59 @@ const Header: React.FC = () => {
 
   return (
     <Container>
-      <LogoContainer onClick={() => navigate("/")}>
-        <Logo src={logo} alt="Logo" />
-        <Tooltip title="Compartir">
+      <LogoContainer>
+        <Logo src={logo} onClick={() => navigate("/")} alt="Futbol Ditroto-6" />
+
+        <Tooltip title={isHomePage ? "Compartir" : "Inicio"}>
           <HomeButton
-            color="secondary"
-            onClick={() => (isHomePage ? onShare() : navigate("/"))}
+            onClick={(event) => {
+              event.stopPropagation();
+              if (isHomePage) {
+                onShare();
+              } else {
+                navigate("/");
+              }
+            }}
           >
             {isHomePage ? <ShareIcon /> : <HomeIcon />}
           </HomeButton>
         </Tooltip>
+        <Tooltip title={user ? `Sesión: ${user.email}` : "Iniciar sesión"}>
+          <HomeButton color="secondary" onClick={handleAuth}>
+            {user ? <LogoutIcon /> : <LoginIcon />}
+          </HomeButton>
+        </Tooltip>
       </LogoContainer>
+
+      {/* NAVEGACIÓN */}
       <ButtonContainer>
-        <Button
+        <NavButton
+          active={location.pathname === "/fixture"}
           onClick={() => handleNavigate("fixture")}
-          color="secondary"
-          sx={NavButtonStyle()}
         >
           FIXTURE
-        </Button>
-        <Button
+        </NavButton>
+
+        <NavButton
+          active={location.pathname === "/table"}
           onClick={() => handleNavigate("table")}
-          color="secondary"
-          sx={NavButtonStyle()}
         >
           {isMobile ? "TABLA" : "TABLA DE POSICIONES"}
-        </Button>
-        <Button
+        </NavButton>
+
+        <NavButton
+          active={location.pathname === "/top-scorers-table"}
           onClick={() => handleNavigate("scorers")}
-          color="secondary"
-          sx={NavButtonStyle()}
         >
           {isMobile ? "GOLEADORES" : "TABLA DE GOLEADORES"}
-        </Button>
-        <Button
+        </NavButton>
+
+        <NavButton
+          active={location.pathname === "/team-categories"}
           onClick={() => handleNavigate("teams")}
-          color="secondary"
-          sx={NavButtonStyle()}
         >
           EQUIPOS
-        </Button>
+        </NavButton>
       </ButtonContainer>
     </Container>
   );
