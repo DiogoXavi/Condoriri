@@ -40,7 +40,8 @@ export const ButtonContainer = styled("div")({
   "@media (max-width: 900px)": {
     flexDirection: "row",
     justifyContent: "space-between",
-    gap: "1.5rem",
+    padding: "0",
+    gap: "1rem",
   },
 
   "& button": {
