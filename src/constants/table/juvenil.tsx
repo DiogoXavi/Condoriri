@@ -1,10 +1,9 @@
-
 import type { ITeamStanding } from "../../types/types";
 
 export const juvenil: ITeamStanding[] = [
   {
-    id: 6,
-    team: "Palacio",
+    id: 1,
+    team: "Ocuri",
     serie: "A",
     matchesPlayed: 0,
     wins: 0,
@@ -16,7 +15,33 @@ export const juvenil: ITeamStanding[] = [
     points: 0,
   },
   {
-    id: 7,
+    id: 2,
+    team: "Murifaya",
+    serie: "B",
+    matchesPlayed: 0,
+    wins: 0,
+    draws: 0,
+    losses: 0,
+    goalsFor: 0,
+    goalsAgainst: 0,
+    goalDifference: 0,
+    points: 0,
+  },
+  {
+    id: 3,
+    team: "Chillagua",
+    serie: "B",
+    matchesPlayed: 0,
+    wins: 0,
+    draws: 0,
+    losses: 0,
+    goalsFor: 0,
+    goalsAgainst: 0,
+    goalDifference: 0,
+    points: 0,
+  },
+  {
+    id: 4,
     team: "Condoriri",
     serie: "B",
     matchesPlayed: 0,
@@ -27,5 +52,18 @@ export const juvenil: ITeamStanding[] = [
     goalsAgainst: 0,
     goalDifference: 0,
     points: 0,
-  }
-]
+  },
+  {
+    id: 5,
+    team: "Palacio",
+    serie: "B",
+    matchesPlayed: 0,
+    wins: 0,
+    draws: 0,
+    losses: 0,
+    goalsFor: 0,
+    goalsAgainst: 0,
+    goalDifference: 0,
+    points: 0,
+  },
+];
