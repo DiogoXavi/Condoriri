@@ -47,7 +47,7 @@ const table = React.useMemo<ITeamStanding[]>(() => {
   switch (selectedCategory) {
     case "Juvenil":
       return orderTable(
-        generateTable(fixtureJuvenil.filter(match => match.group < 25), juvenil)
+        generateTable(fixtureJuvenil.filter(match =>match.group > 0 && match.group < 25), juvenil)
       );
 
     case "Senior":

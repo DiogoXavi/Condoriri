@@ -33,8 +33,8 @@ export const getTeamName = (id: number): string => {
 export const juvenil: IMatch[] = [
   // FECHA 1
   {
-    id: 0,
-    team1: getTeamName(41),
+    id: 99,
+    team1: getTeamName(4),
     scorerTeam1: 1,
     scorerTeam2: 0,
     team2: getTeamName(2),
