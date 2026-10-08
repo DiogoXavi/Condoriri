@@ -90,9 +90,9 @@ const StandingsTable: React.FC<Props> = ({ standings, category }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const QUALIFIED_BY_CATEGORY: Record<CategoryType, number> = {
-    Juvenil: 8,
-    Damas: 6,
-    Senior: 4,
+    Juvenil: 3,
+    Damas: 3,
+    Senior: 3,
     Infantil: 4,
   };
 

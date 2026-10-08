@@ -127,7 +127,7 @@ const FixtureCard: React.FC<IFixtureCard> = ({
             }}
           />
           <span style={{ fontWeight: 600, fontSize: "0.65em" }}>
-            {player?.full_name || `#${e.num}`}{" "}
+            {player?.full_name || `Jugador #${e.num}`}{" "}
             {player?.full_name && `(${player.number})`}
           </span>
           <div style={{ display: "flex", gap: "3px" }}>
