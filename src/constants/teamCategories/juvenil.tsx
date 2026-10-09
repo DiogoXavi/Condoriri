@@ -6,20 +6,20 @@ export const juvenil: ITeamCategoryItem[] = [
   {
     id: 1,
     series: "A",
-    name: "Ocuri",
+    name: "Chillagua",
     url: "abierto",
     // url: "https://forms.gle/kuXGysPJVMphh9eD8",
-    logo: getLogo("Ocuri"),
+    logo: getLogo("Chillagua"),
     delegates: [
     ],
   },
   {
     id: 2,
     series: "A",
-    name: "Murifaya",
+    name: "Condoriri",
     url: "abierto",
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
-    logo: getLogo("Murifaya"),
+    logo: getLogo("Condoriri"),
     delegates: [
     //         {
     //     id: 1,
@@ -38,10 +38,10 @@ export const juvenil: ITeamCategoryItem[] = [
     {
     id: 3,
     series: "A",
-    name: "Chillagua",
+    name: "Maica",
     url: "abierto",
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
-    logo: getLogo("Chillagua"),
+    logo: getLogo("Maica"),
     delegates: [
       // { id: 1, name: "Jhoni Flores", contact: "", category: "Juvenil" },
     ],
@@ -49,15 +49,15 @@ export const juvenil: ITeamCategoryItem[] = [
     {
     id: 4,
     series: "A",
-    name: "Condoriri",
+    name: "Murifaya",
     url: "abierto",
     // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
-    logo: getLogo("Condoriri"),
+    logo: getLogo("Murifaya"),
     delegates: [
       // { id: 1, name: "Iver Carmona", contact: "", category: "Juvenil" },
     ],
   },
-    {
+  {
     id: 5,
     series: "A",
     name: "Palacio",
@@ -71,6 +71,23 @@ export const juvenil: ITeamCategoryItem[] = [
         contact: "",
         category: "Juvenil",
       },
+      // { id: 2, name: "Elzon Rivera Cruz", contact: "", category: "Juvenil" },
+    ],
+  },
+  {
+    id: 6,
+    series: "A",
+    name: "Ocuri",
+    url: "abierto",
+    // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
+    logo: getLogo("Ocuri"),
+    delegates: [
+      //  {
+      //   id: 1,
+      //   name: "Dionatan Villca Condori ",
+      //   contact: "",
+      //   category: "Juvenil",
+      // },
       // { id: 2, name: "Elzon Rivera Cruz", contact: "", category: "Juvenil" },
     ],
   },
