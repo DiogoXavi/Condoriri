@@ -27,7 +27,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState("campeonato-d7@gmail.com");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("Condoriri.2026.AR");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   if (loading) {
