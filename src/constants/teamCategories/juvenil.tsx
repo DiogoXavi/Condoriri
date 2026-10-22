@@ -91,4 +91,21 @@ export const juvenil: ITeamCategoryItem[] = [
       // { id: 2, name: "Elzon Rivera Cruz", contact: "", category: "Juvenil" },
     ],
   },
+  {
+    id: 7,
+    series: "A",
+    name: "Japo",
+    url: "abierto",
+    // url: "https://forms.gle/3xnmCEFhWyQzvKqX8",
+    logo: getLogo("Japo"),
+    delegates: [
+      //  {
+      //   id: 1,
+      //   name: "Dionatan Villca Condori ",
+      //   contact: "",
+      //   category: "Juvenil",
+      // },
+      // { id: 2, name: "Elzon Rivera Cruz", contact: "", category: "Juvenil" },
+    ],
+  },
 ];
