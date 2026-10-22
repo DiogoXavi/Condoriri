@@ -167,6 +167,12 @@ const FixtureCard: React.FC<IFixtureCard> = ({
               <SerieLabel serie={"C"}>FINAL</SerieLabel>
             </TitleItem>
           )}
+          {group < 0 && (
+            <TitleItem>
+              <strong>COPA AMISTAD</strong>
+              {/* <SerieLabel serie={"C"}>FINAL</SerieLabel> */}
+            </TitleItem>
+          )}
 
           {group > 0 && (
             <TitleItem>
