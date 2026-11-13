@@ -140,10 +140,11 @@ export const orderTable = (
     if (b.goalDifference !== a.goalDifference) {
       return b.goalDifference - a.goalDifference;
     }
+    
 
-    if (b.goalsFor !== a.goalsFor) {
-      return b.goalsFor - a.goalsFor;
-    }
+    // if (b.goalsFor !== a.goalsFor) {
+    //   return b.goalsFor - a.goalsFor;
+    // }
 
     return a.team.localeCompare(b.team);
   });
